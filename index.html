@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD-Zukas Travels | Your Gateway to Global Opportunities</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            // You will need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+            emailjs.init("OU2z2-jAcIt_lq1oP");
+        })();
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">MD-Zukas <span class="accent">Travels</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
+                <li class="nav-item"><a href="#destinations" class="nav-link">Destinations</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link btn-cta">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1>Your Gateway to Studying and <span class="highlight">Working Abroad</span></h1>
+            <p>Expert guidance for visas, university admissions, and international career opportunities. Let us make your global dreams a reality.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Apply Now</a>
+                <a href="#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container about-container">
+            <div class="about-text scroll-hidden">
+                <h2 class="section-title">About MD-Zukas Travels</h2>
+                <p>We are a dedicated travel agency with a mission to bridge the gap between talent and opportunity. With years of experience in international relocation, we specialize in helping students and professionals find their path abroad.</p>
+                <p>Whether you are seeking a world-class education or a career upgrade in a new country, our expert team provides end-to-end support for study visas, work permits, and settlement guidance.</p>
+                <div class="stats">
+                    <div class="stat-item scroll-hidden">
+                        <h3><span class="counter" data-target="500">0</span>+</h3>
+                        <p>Visas Approved</p>
+                    </div>
+                    <div class="stat-item scroll-hidden">
+                        <h3><span class="counter" data-target="20">0</span>+</h3>
+                        <p>Countries</p>
+                    </div>
+                    <div class="stat-item scroll-hidden">
+                        <h3><span class="counter" data-target="98">0</span>%</h3>
+                        <p>Success Rate</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image scroll-hidden">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team meeting">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title center">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Study Abroad</h3>
+                    <p>Comprehensive guidance on university selection, application processes, and student visa requirements for top global institutions.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Work Abroad</h3>
+                    <p>Connect with international employers and navigate the complexities of work permits and skilled migration pathways.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="fas fa-passport"></i>
+                    </div>
+                    <h3>Visa Processing</h3>
+                    <p>Expert handling of visa documentation, interviews, and submissions to maximize your chances of approval.</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon-box">
+                        <i class="fas fa-plane-departure"></i>
+                    </div>
+                    <h3>Travel Consultation</h3>
+                    <p>Pre-departure briefings, flight bookings, and accommodation assistance to ensure a smooth transition to your new home.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Destinations Section -->
+    <section id="destinations" class="section">
+        <div class="container">
+            <h2 class="section-title center">Featured Destinations</h2>
+            <p class="section-subtitle center">Explore opportunities in top countries around the world</p>
+            
+            <div class="slider-container">
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-track-container">
+                    <ul class="slider-track">
+                        <li class="slide current-slide">
+                            <img src="https://flagcdn.com/w640/us.png" alt="USA Flag">
+                            <div class="slide-caption">USA</div>
+                        </li>
+                        <li class="slide">
+                            <img src="https://flagcdn.com/w640/gb.png" alt="UK Flag">
+                            <div class="slide-caption">UK</div>
+                        </li>
+                        <li class="slide">
+                            <img src="https://flagcdn.com/w640/ca.png" alt="Canada Flag">
+                            <div class="slide-caption">Canada</div>
+                        </li>
+                        <li class="slide">
+                            <img src="https://flagcdn.com/w640/au.png" alt="Australia Flag">
+                            <div class="slide-caption">Australia</div>
+                        </li>
+                        <li class="slide">
+                            <img src="https://flagcdn.com/w640/de.png" alt="Germany Flag">
+                            <div class="slide-caption">Germany</div>
+                        </li>
+                        <li class="slide">
+                            <img src="https://flagcdn.com/w640/nz.png" alt="New Zealand Flag">
+                            <div class="slide-caption">New Zealand</div>
+                        </li>
+                    </ul>
+                </div>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+                
+                <div class="slider-nav">
+                    <button class="slider-dot current-slide"></button>
+                    <button class="slider-dot"></button>
+                    <button class="slider-dot"></button>
+                    <button class="slider-dot"></button>
+                    <button class="slider-dot"></button>
+                    <button class="slider-dot"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section bg-primary text-white">
+        <div class="container">
+            <h2 class="section-title center text-white">Why Choose MD-Zukas Travels?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Trusted Guidance</h3>
+                    <p>Honest, transparent, and reliable advice tailored to your profile.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Fast Processing</h3>
+                    <p>Efficient handling of applications to save you time and stress.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <h3>Global Opportunities</h3>
+                    <p>Access to a wide network of universities and employers worldwide.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-headset"></i>
+                    <h3>Personalized Support</h3>
+                    <p>Dedicated counselors to assist you at every step of your journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container contact-container">
+            <div class="contact-info">
+                <h2 class="section-title">Get in Touch</h2>
+                <p>Ready to start your journey? Fill out the form or contact us directly.</p>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>New Kenyetta Market Enugu State Nigeria</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+0 0 000 000</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>info@mdzukas.travel</span>
+                    </div>
+                </div>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            
+            <div class="contact-form-wrapper">
+                <form id="application-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" required placeholder="Chinedu Onwuaso">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="name@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 234 567 8900">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Intended Country</label>
+                        <select id="country" name="country" required>
+                            <option value="" disabled selected>Select a country</option>
+                            <option value="USA">USA</option>
+                            <option value="UK">UK</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Australia">Australia</option>
+                            <option value="Germany">Germany</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="purpose">Purpose of Travel</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="" disabled selected>Select purpose</option>
+                            <option value="Study">Study</option>
+                            <option value="Work">Work</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message / Additional Info</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Tell us more about your plans..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Send Application</button>
+                    <div id="form-status" class="form-status"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">
+                <h2>MD-Zukas Travels</h2>
+                <p>Your partner in international mobility.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 MD-Zukas Travels. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
