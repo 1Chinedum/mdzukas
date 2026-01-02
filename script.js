@@ -169,6 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const country = document.getElementById('country').value;
         const purpose = document.getElementById('purpose').value;
         const message = document.getElementById('message').value;
+        const cvInput = document.getElementById('cv');
 
         if (!fullName || !email || !phone || !country || !purpose) {
             formStatus.textContent = 'Please fill in all required fields.';
@@ -176,17 +177,24 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Prepare template parameters
-        // Note: You need to set up an EmailJS service and template with these variable names
-        const templateParams = {
-            to_email: '10eduaso7@gmail.com',
-            from_name: fullName,
-            from_email: email,
-            phone_number: phone,
-            intended_country: country,
-            travel_purpose: purpose,
-            message: message
-        };
+        if (cvInput && cvInput.files && cvInput.files.length) {
+            const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'application/pdf'];
+            for (let i = 0; i < cvInput.files.length; i++) {
+                const file = cvInput.files[i];
+                if (!allowedTypes.includes(file.type)) {
+                    formStatus.textContent = 'Only images (JPG, PNG, WEBP, GIF) or PDF are allowed.';
+                    formStatus.className = 'form-status error';
+                    return;
+                }
+                if (file.size > 5 * 1024 * 1024) {
+                    formStatus.textContent = 'Each file must be under 5MB.';
+                    formStatus.className = 'form-status error';
+                    return;
+                }
+            }
+        }
+
+        
 
         // Button loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
@@ -202,7 +210,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const isConfigured = true; // Set to true if you input real keys
 
         if (isConfigured) {
-            emailjs.send('service_k3jmiqy', 'template_2l3w65s', templateParams)
+            emailjs.sendForm('service_k3jmiqy', 'template_2l3w65s', contactForm)
                 .then(function() {
                     formStatus.textContent = 'Your details have been sent successfully. We will contact you soon.';
                     formStatus.className = 'form-status success';
@@ -219,7 +227,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Simulation for the user to see UI feedback
             setTimeout(() => {
-                console.log('Simulating EmailJS send:', templateParams);
+                console.log('Simulating EmailJS send with form data');
                 formStatus.textContent = 'Your details have been sent successfully. We will contact you soon. (Simulation Mode)';
                 formStatus.className = 'form-status success';
                 contactForm.reset();
