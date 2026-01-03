@@ -186,20 +186,35 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
 
-        // Send email
-        // REPLACE 'YOUR_SERVICE_ID' AND 'YOUR_TEMPLATE_ID' WITH ACTUAL VALUES
-        // For demonstration purposes, we will simulate a success if keys are not set
-        
+        const templateParams = {
+            to_email: '10eduaso7@gmail.com',
+            from_name: fullName,
+            from_email: email,
+            phone_number: phone,
+            intended_country: country,
+            travel_purpose: purpose,
+            message: message
+        };
+
+        const secondaryParams = {
+            ...templateParams,
+            to_email: 'kbresearch23@gmail.com'
+        };
+
         // Check if EmailJS is initialized properly (mock check)
         const isConfigured = true; // Set to true if you input real keys
 
         if (isConfigured) {
-            emailjs.sendForm('service_sai18zg', 'template_2l3w65s', contactForm)
+            Promise.all([
+                emailjs.send('service_sai18zg', 'template_2l3w65s', templateParams),
+                emailjs.send('service_sai18zg', 'template_2l3w65s', secondaryParams)
+            ])
                 .then(function() {
                     formStatus.textContent = 'Your details have been sent successfully. We will contact you soon.';
                     formStatus.className = 'form-status success';
                     contactForm.reset();
-                }, function(error) {
+                })
+                .catch(function(error) {
                     console.error('FAILED...', error);
                     formStatus.textContent = 'Failed to send message. Please try again later.';
                     formStatus.className = 'form-status error';
@@ -211,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             // Simulation for the user to see UI feedback
             setTimeout(() => {
-                console.log('Simulating EmailJS send with form data');
+                console.log('Simulating EmailJS send to two recipients');
                 formStatus.textContent = 'Your details have been sent successfully. We will contact you soon. (Simulation Mode)';
                 formStatus.className = 'form-status success';
                 contactForm.reset();
