@@ -835,3 +835,146 @@ footer {
         padding: 20px;
     }
 }
+.cookie-banner {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background-color: var(--white);
+    color: var(--text-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    z-index: 10000;
+}
+
+.cookie-content {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 16px 20px;
+}
+
+.cookie-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.cookie-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: rgba(0, 128, 128, 0.1);
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cookie-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.cookie-description {
+    color: var(--text-light);
+    font-size: 0.95rem;
+}
+
+.cookie-link {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
+
+.cookie-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.cookie-preferences {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+    display: block;
+}
+
+.pref-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 16px;
+}
+
+.pref-toggle input {
+    width: 40px;
+    height: 22px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #ddd;
+    border-radius: 22px;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pref-toggle input::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.pref-toggle input:checked {
+    background: var(--primary-color);
+}
+
+.pref-toggle input:checked::after {
+    transform: translateX(18px);
+}
+
+.pref-toggle span {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.whatsapp-float {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 56px;
+    height: 56px;
+    background-color: #25D366;
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    z-index: 10000;
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.05);
+}
+
+.whatsapp-float i {
+    font-size: 24px;
+}
+
+@media (max-width: 576px) {
+    .cookie-content {
+        padding: 14px 16px;
+    }
+}
