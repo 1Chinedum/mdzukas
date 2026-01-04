@@ -162,7 +162,6 @@ document.addEventListener('DOMContentLoaded', function() {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Basic Validation
         const fullName = document.getElementById('fullName').value;
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
@@ -176,18 +175,13 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        
-
-        
-
-        // Button loading state
         const submitBtn = contactForm.querySelector('button[type="submit"]');
         const originalBtnText = submitBtn.textContent;
         submitBtn.textContent = 'Sending...';
         submitBtn.disabled = true;
 
         const templateParams = {
-            to_email: '10eduaso7@gmail.com',
+            to_email: 'mdzukas2020@gmail.com',
             from_name: fullName,
             from_email: email,
             phone_number: phone,
@@ -201,38 +195,35 @@ document.addEventListener('DOMContentLoaded', function() {
             to_email: 'kbresearch23@gmail.com'
         };
 
-        // Check if EmailJS is initialized properly (mock check)
-        const isConfigured = true; // Set to true if you input real keys
+        const isConfigured = true;
 
         if (isConfigured) {
             Promise.all([
                 emailjs.send('service_sai18zg', 'template_2l3w65s', templateParams),
                 emailjs.send('service_sai18zg', 'template_2l3w65s', secondaryParams)
             ])
-                .then(function() {
-                    formStatus.textContent = 'Your details have been sent successfully. We will contact you soon.';
-                    formStatus.className = 'form-status success';
-                    contactForm.reset();
-                })
-                .catch(function(error) {
-                    console.error('FAILED...', error);
-                    formStatus.textContent = 'Failed to send message. Please try again later.';
-                    formStatus.className = 'form-status error';
-                })
-                .finally(() => {
-                    submitBtn.textContent = originalBtnText;
-                    submitBtn.disabled = false;
-                });
+            .then(() => {
+                formStatus.textContent = 'Your details have been sent successfully. We will contact you soon.';
+                formStatus.className = 'form-status success';
+                contactForm.reset();
+            })
+            .catch((error) => {
+                console.error('FAILED...', error);
+                formStatus.textContent = 'Failed to send message. Please try again later.';
+                formStatus.className = 'form-status error';
+            })
+            .finally(() => {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            });
         } else {
-            // Simulation for the user to see UI feedback
             setTimeout(() => {
-                console.log('Simulating EmailJS send to two recipients');
-                formStatus.textContent = 'Your details have been sent successfully. We will contact you soon. (Simulation Mode)';
+                formStatus.textContent = 'Your details have been sent successfully. (Simulation Mode)';
                 formStatus.className = 'form-status success';
                 contactForm.reset();
                 submitBtn.textContent = originalBtnText;
                 submitBtn.disabled = false;
-            }, 1500);
+            }, 1200);
         }
     });
 
@@ -267,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('scroll-visible');
-                
+                             
                 // --- Counter Animation ---
                 const counters = entry.target.querySelectorAll('.counter');
                 counters.forEach(counter => {
@@ -303,5 +294,23 @@ document.addEventListener('DOMContentLoaded', function() {
     // Target elements for animation
     const animateElements = document.querySelectorAll('.scroll-hidden');
     animateElements.forEach(el => observer.observe(el));
+
+    // FAQ Toggle
+    const faqButtons = document.querySelectorAll('.faq-question');
+    faqButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const item = btn.closest('.faq-item');
+            const expanded = btn.getAttribute('aria-expanded') === 'true';
+            document.querySelectorAll('.faq-item').forEach(i => {
+                i.classList.remove('open');
+                const b = i.querySelector('.faq-question');
+                if (b) b.setAttribute('aria-expanded', 'false');
+            });
+            if (!expanded) {
+                item.classList.add('open');
+                btn.setAttribute('aria-expanded', 'true');
+            }
+        });
+    });
 
 });

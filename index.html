@@ -13,8 +13,6 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
-            // Initialize EmailJS with your public key
-            // You will need to replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
             emailjs.init("OU2z2-jAcIt_lq1oP");
         })();
     </script>
@@ -160,7 +158,7 @@
                             <div class="slide-caption">South Africa</div>
                         </li>
                         <li class="slide">
-                            <img src="https://flagcdn.com/w640/qr.png" alt="Czech Republic Flag">
+                            <img src="https://flagcdn.com/w640/cr.png" alt="Czech Republic Flag">
                             <div class="slide-caption">Czech Republic</div>
                         </li>
                     </ul>
@@ -176,6 +174,45 @@
                     <button class="slider-dot"></button>
                     <button class="slider-dot"></button>
                     <button class="slider-dot"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+        <div class="container">
+            <h2 class="section-title center">Frequently Asked Questions</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq1">How long does application processing take?<i class="fas fa-chevron-down"></i></button>
+                    <div id="faq1" class="faq-answer" role="region" aria-labelledby="faq1-label">
+                        <p id="faq1-label">Typical processing times range from 2–6 weeks depending on the destination and visa category.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq2">Which services do you offer?<i class="fas fa-chevron-down"></i></button>
+                    <div id="faq2" class="faq-answer" role="region" aria-labelledby="faq2-label">
+                        <p id="faq2-label">We support study abroad, work abroad, visa processing, and travel consultation end-to-end.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq3">Which countries can I apply to?<i class="fas fa-chevron-down"></i></button>
+                    <div id="faq3" class="faq-answer" role="region" aria-labelledby="faq3-label">
+                        <p id="faq3-label">Turkey, Serbia, Belgium, Malta, Oman, Qatar, Cyprus, and South Africa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq4">What basic requirements are needed?<i class="fas fa-chevron-down"></i></button>
+                    <div id="faq4" class="faq-answer" role="region" aria-labelledby="faq4-label">
+                        <p id="faq4-label">Valid passport, proof of funds, admission or job offer (where applicable), and supporting documents.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq5">How can I get started?<i class="fas fa-chevron-down"></i></button>
+                    <div id="faq5" class="faq-answer" role="region" aria-labelledby="faq5-label">
+                        <p id="faq5-label">Submit the contact form and our team will reach out to guide you through the next steps.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -240,7 +277,6 @@
             
             <div class="contact-form-wrapper">
                 <form id="application-form" class="contact-form">
-                    <input type="hidden" name="to_email" value="10eduaso7@gmail.com">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="from_name" required placeholder="Your Name..">
