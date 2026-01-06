@@ -65,94 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // --- Slider/Carousel Logic ---
-    const track = document.querySelector('.slider-track');
-    const slides = Array.from(track.children);
-    const nextButton = document.querySelector('.next-btn');
-    const prevButton = document.querySelector('.prev-btn');
-    const dotsNav = document.querySelector('.slider-nav');
-    const dots = Array.from(dotsNav.children);
-
-    const slideWidth = slides[0].getBoundingClientRect().width;
-
-    // Arrange the slides next to one another
-    const setSlidePosition = (slide, index) => {
-        slide.style.left = slideWidth * index + 'px';
-    };
-    slides.forEach(setSlidePosition);
-
-    const moveToSlide = (track, currentSlide, targetSlide) => {
-        track.style.transform = 'translateX(-' + targetSlide.style.left + ')';
-        currentSlide.classList.remove('current-slide');
-        targetSlide.classList.add('current-slide');
-    };
-
-    const updateDots = (currentDot, targetDot) => {
-        currentDot.classList.remove('current-slide');
-        targetDot.classList.add('current-slide');
-    };
-
-    const nextSlide = () => {
-        const currentSlide = track.querySelector('.current-slide');
-        const nextSlide = currentSlide.nextElementSibling || slides[0]; // Loop back to start
-        const currentDot = dotsNav.querySelector('.current-slide');
-        const nextDot = currentDot.nextElementSibling || dots[0]; // Loop dots
-
-        moveToSlide(track, currentSlide, nextSlide);
-        updateDots(currentDot, nextDot);
-    };
-
-    const prevSlide = () => {
-        const currentSlide = track.querySelector('.current-slide');
-        const prevSlide = currentSlide.previousElementSibling || slides[slides.length - 1]; // Loop to end
-        const currentDot = dotsNav.querySelector('.current-slide');
-        const prevDot = currentDot.previousElementSibling || dots[dots.length - 1];
-
-        moveToSlide(track, currentSlide, prevSlide);
-        updateDots(currentDot, prevDot);
-    };
-
-    // Click events
-    nextButton.addEventListener('click', nextSlide);
-    prevButton.addEventListener('click', prevSlide);
-
-    dotsNav.addEventListener('click', e => {
-        const targetDot = e.target.closest('button');
-
-        if (!targetDot) return;
-
-        const currentSlide = track.querySelector('.current-slide');
-        const currentDot = dotsNav.querySelector('.current-slide');
-        const targetIndex = dots.findIndex(dot => dot === targetDot);
-        const targetSlide = slides[targetIndex];
-
-        moveToSlide(track, currentSlide, targetSlide);
-        updateDots(currentDot, targetDot);
-    });
-
-    // Auto-slide functionality
-    let slideInterval = setInterval(nextSlide, 5000);
-
-    // Pause on hover
-    const sliderContainer = document.querySelector('.slider-container');
-    sliderContainer.addEventListener('mouseenter', () => {
-        clearInterval(slideInterval);
-    });
-
-    sliderContainer.addEventListener('mouseleave', () => {
-        slideInterval = setInterval(nextSlide, 5000);
-    });
-    
-    // Handle window resize for responsive slider
-    window.addEventListener('resize', () => {
-        const newSlideWidth = slides[0].getBoundingClientRect().width;
-        slides.forEach((slide, index) => {
-            slide.style.left = newSlideWidth * index + 'px';
-        });
-        // Reset to current slide position to avoid misalignment
-        const currentSlide = track.querySelector('.current-slide');
-        track.style.transform = 'translateX(-' + currentSlide.style.left + ')';
-    });
+    // Slideshow removed; no slider initialization
 
 
     // --- Form Handling with EmailJS ---
@@ -295,6 +208,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateElements = document.querySelectorAll('.scroll-hidden');
     animateElements.forEach(el => observer.observe(el));
 
+    // Removed parallax effect for simpler behavior
+
     // FAQ Toggle
     const faqButtons = document.querySelectorAll('.faq-question');
     faqButtons.forEach(btn => {
@@ -312,5 +227,4 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
 });

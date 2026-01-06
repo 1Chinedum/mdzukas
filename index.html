@@ -40,7 +40,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
-        <div class="container hero-content">
+        <div class="container hero-content scroll-hidden">
             <h1>Your Gateway to Studying and <span class="highlight">Working Abroad</span></h1>
             <p>Expert guidance for visas, university admissions, and international career opportunities. Let us make your global dreams a reality.</p>
             <div class="hero-buttons">
@@ -83,28 +83,28 @@
         <div class="container">
             <h2 class="section-title center">Our Services</h2>
             <div class="services-grid">
-                <div class="service-card">
+                <div class="service-card scroll-hidden">
                     <div class="icon-box">
                         <i class="fas fa-graduation-cap"></i>
                     </div>
                     <h3>Study Abroad</h3>
                     <p>Comprehensive guidance on university selection, application processes, and student visa requirements for top global institutions.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-hidden">
                     <div class="icon-box">
                         <i class="fas fa-briefcase"></i>
                     </div>
                     <h3>Work Abroad</h3>
                     <p>Connect with international employers and navigate the complexities of work permits and skilled migration pathways.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-hidden">
                     <div class="icon-box">
                         <i class="fas fa-passport"></i>
                     </div>
                     <h3>Visa Processing</h3>
                     <p>Expert handling of visa documentation, interviews, and submissions to maximize your chances of approval.</p>
                 </div>
-                <div class="service-card">
+                <div class="service-card scroll-hidden">
                     <div class="icon-box">
                         <i class="fas fa-plane-departure"></i>
                     </div>
@@ -120,60 +120,32 @@
         <div class="container">
             <h2 class="section-title center">Featured Destinations</h2>
             <p class="section-subtitle center">Explore opportunities in top countries around the world</p>
-            
-            <div class="slider-container">
-                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
-                <div class="slider-track-container">
-                    <ul class="slider-track">
-                        <li class="slide current-slide">
-                            <img src="https://flagcdn.com/w640/tr.png" alt="Turkey Flag">
-                            <div class="slide-caption">Turkey</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/rs.png" alt="Serbia Flag">
-                            <div class="slide-caption">Serbia</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/be.png" alt="Belgium Flag">
-                            <div class="slide-caption">Belgium</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/mt.png" alt="Malta Flag">
-                            <div class="slide-caption">Malta</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/om.png" alt="Oman Flag">
-                            <div class="slide-caption">Oman</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/qa.png" alt="Qatar Flag">
-                            <div class="slide-caption">Qatar</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/cy.png" alt="Cyprus Flag">
-                            <div class="slide-caption">Cyprus</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/za.png" alt="South Africa Flag">
-                            <div class="slide-caption">South Africa</div>
-                        </li>
-                        <li class="slide">
-                            <img src="https://flagcdn.com/w640/cr.png" alt="Czech Republic Flag">
-                            <div class="slide-caption">Czech Republic</div>
-                        </li>
-                    </ul>
-                </div>
-                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
-                
-                <div class="slider-nav">
-                    <button class="slider-dot current-slide"></button>
-                    <button class="slider-dot"></button>
-                    <button class="slider-dot"></button>
-                    <button class="slider-dot"></button>
-                    <button class="slider-dot"></button>
-                    <button class="slider-dot"></button>
-                    <button class="slider-dot"></button>
-                    <button class="slider-dot"></button>
+            <!-- Destinations Slider removed as requested -->
+
+            <div class="country-marquee" aria-label="Featured destinations">
+                <div class="marquee-track">
+                    <div class="marquee-group">
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/tr.png" alt="Turkey"><span>Study in Turkey</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/rs.png" alt="Serbia"><span>Work in Serbia</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/be.png" alt="Belgium"><span>Opportunities in Belgium</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/mt.png" alt="Malta"><span>Move to Malta</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/om.png" alt="Oman"><span>Careers in Oman</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/qa.png" alt="Qatar"><span>Work in Qatar</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/cy.png" alt="Cyprus"><span>Study in Cyprus</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/za.png" alt="South Africa"><span>Explore South Africa</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/cr.png" alt="Czech Republic"><span>Settle in Czech Republic</span></div>
+                    </div>
+                    <div class="marquee-group" aria-hidden="true">
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/tr.png" alt="Turkey"><span>Study in Turkey</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/rs.png" alt="Serbia"><span>Work in Serbia</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/be.png" alt="Belgium"><span>Opportunities in Belgium</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/mt.png" alt="Malta"><span>Move to Malta</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/om.png" alt="Oman"><span>Careers in Oman</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/qa.png" alt="Qatar"><span>Work in Qatar</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/cy.png" alt="Cyprus"><span>Study in Cyprus</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/za.png" alt="South Africa"><span>Explore South Africa</span></div>
+                        <div class="marquee-item"><img src="https://flagcdn.com/w40/cr.png" alt="Czech Republic"><span>Settle in Czech Republic</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -184,31 +156,31 @@
         <div class="container">
             <h2 class="section-title center">Frequently Asked Questions</h2>
             <div class="faq">
-                <div class="faq-item">
+                <div class="faq-item scroll-hidden">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq1">How long does application processing take?<i class="fas fa-chevron-down"></i></button>
                     <div id="faq1" class="faq-answer" role="region" aria-labelledby="faq1-label">
                         <p id="faq1-label">Typical processing times range from 2–6 weeks depending on the destination and visa category.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item scroll-hidden">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq2">Which services do you offer?<i class="fas fa-chevron-down"></i></button>
                     <div id="faq2" class="faq-answer" role="region" aria-labelledby="faq2-label">
                         <p id="faq2-label">We support study abroad, work abroad, visa processing, and travel consultation end-to-end.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item scroll-hidden">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq3">Which countries can I apply to?<i class="fas fa-chevron-down"></i></button>
                     <div id="faq3" class="faq-answer" role="region" aria-labelledby="faq3-label">
                         <p id="faq3-label">Turkey, Serbia, Belgium, Malta, Oman, Qatar, Cyprus, and South Africa.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item scroll-hidden">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq4">What basic requirements are needed?<i class="fas fa-chevron-down"></i></button>
                     <div id="faq4" class="faq-answer" role="region" aria-labelledby="faq4-label">
                         <p id="faq4-label">Valid passport, proof of funds, admission or job offer (where applicable), and supporting documents.</p>
                     </div>
                 </div>
-                <div class="faq-item">
+                <div class="faq-item scroll-hidden">
                     <button class="faq-question" aria-expanded="false" aria-controls="faq5">How can I get started?<i class="fas fa-chevron-down"></i></button>
                     <div id="faq5" class="faq-answer" role="region" aria-labelledby="faq5-label">
                         <p id="faq5-label">Submit the contact form and our team will reach out to guide you through the next steps.</p>
@@ -223,22 +195,22 @@
         <div class="container">
             <h2 class="section-title center text-white">Why Choose MD-Zukas Travels?</h2>
             <div class="benefits-grid">
-                <div class="benefit-item">
+                <div class="benefit-item scroll-hidden">
                     <i class="fas fa-user-check"></i>
                     <h3>Trusted Guidance</h3>
                     <p>Honest, transparent, and reliable advice tailored to your profile.</p>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item scroll-hidden">
                     <i class="fas fa-tachometer-alt"></i>
                     <h3>Fast Processing</h3>
                     <p>Efficient handling of applications to save you time and stress.</p>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item scroll-hidden">
                     <i class="fas fa-globe-americas"></i>
                     <h3>Global Opportunities</h3>
                     <p>Access to a wide network of universities and employers worldwide.</p>
                 </div>
-                <div class="benefit-item">
+                <div class="benefit-item scroll-hidden">
                     <i class="fas fa-headset"></i>
                     <h3>Personalized Support</h3>
                     <p>Dedicated counselors to assist you at every step of your journey.</p>
@@ -250,7 +222,7 @@
     <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="container contact-container">
-            <div class="contact-info">
+            <div class="contact-info scroll-hidden">
                 <h2 class="section-title">Get in Touch</h2>
                 <p>Ready to start your journey? Fill out the form or contact us directly.</p>
                 <div class="contact-details">
@@ -275,7 +247,7 @@
                 </div>
             </div>
             
-            <div class="contact-form-wrapper">
+            <div class="contact-form-wrapper scroll-hidden">
                 <form id="application-form" class="contact-form">
                     <div class="form-group">
                         <label for="fullName">Full Name</label>
@@ -344,6 +316,8 @@
     
 
     <a href="https://wa.me/2348135201082?text=Hello%20MD-Zukas%20Travels" class="whatsapp-float" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+    
 
     <script src="script.js"></script>
 </body>

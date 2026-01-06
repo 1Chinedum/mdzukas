@@ -287,6 +287,12 @@ img {
     transform: translateY(0);
 }
 
+/* Removed advanced animation variants for simpler behavior */
+
+/* Removed sweep accent effects */
+
+/* Removed staggered delays for simpler timing */
+
 .about-image img {
     border-radius: 10px;
     box-shadow: var(--shadow);
@@ -298,22 +304,7 @@ img {
     margin-top: 30px;
 }
 
-.stat-item {
-    /* Base transition inherited from scroll-hidden if applied, but we want delays */
-}
-
-/* Staggered delays for stats */
-.stat-item.scroll-visible:nth-child(1) {
-    transition-delay: 0.2s;
-}
-
-.stat-item.scroll-visible:nth-child(2) {
-    transition-delay: 0.4s;
-}
-
-.stat-item.scroll-visible:nth-child(3) {
-    transition-delay: 0.6s;
-}
+/* Stat items use base scroll animations */
 
 .stat-item h3 {
     font-size: 2rem;
@@ -372,117 +363,65 @@ img {
     color: var(--text-light);
 }
 
-/* Featured Destinations (Carousel) */
-.slider-container {
+/* Featured Destinations (Carousel) removed */
+
+.country-marquee {
     position: relative;
-    height: 220px;
-    width: 100%;
-    margin: 0 auto;
-    border-radius: 20px; /* Rounded container requirement */
     overflow: hidden;
+    width: 100%;
+    margin-top: 24px;
+    padding: 10px 0;
+    background: var(--off-white);
+    border-radius: 12px;
     box-shadow: var(--shadow);
 }
 
-.slider-track-container {
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-}
-
-.slider-track {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    position: relative;
-    height: 100%;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
+.country-marquee::before,
+.country-marquee::after {
+    content: '';
     position: absolute;
     top: 0;
-    bottom: 0;
-    width: 100%;
+    width: 40px;
+    height: 100%;
+    z-index: 1;
+}
+
+.country-marquee::before { left: 0; background: linear-gradient(90deg, var(--off-white) 0%, rgba(249,249,249,0) 100%); }
+.country-marquee::after { right: 0; background: linear-gradient(270deg, var(--off-white) 0%, rgba(249,249,249,0) 100%); }
+
+.marquee-track {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    width: 200%;
+    animation: marquee-scroll 35s linear infinite;
+    will-change: transform;
+}
+
+.marquee-group {
+    display: flex;
+    flex-shrink: 0;
+}
+
+.marquee-item {
+    display: inline-flex;
     align-items: center;
-}
-
-.slide img {
-    width: 140px;
-    height: 140px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: var(--shadow);
-}
-
-.slide-caption {
-    position: absolute;
-    bottom: 24px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(0, 0, 0, 0.6);
-    color: var(--white);
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 1rem;
-    font-weight: 600;
-}
-
-.slider-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.7);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 10;
-    font-size: 20px;
+    gap: 10px;
+    padding: 0 24px;
+    font-weight: 500;
     color: var(--text-dark);
-    transition: var(--transition);
+    white-space: nowrap;
 }
 
-.slider-btn:hover {
-    background: var(--white);
-    color: var(--primary-color);
-}
-
-.prev-btn {
-    left: 20px;
-}
-
-.next-btn {
-    right: 20px;
-}
-
-.slider-nav {
-    display: flex;
-    justify-content: center;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    z-index: 10;
-}
-
-.slider-dot {
-    border: none;
-    width: 12px;
-    height: 12px;
+.marquee-item img {
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    margin: 0 5px;
-    cursor: pointer;
-    transition: var(--transition);
+    box-shadow: var(--shadow);
+    object-fit: cover;
 }
 
-.slider-dot.current-slide {
-    background: var(--white);
-    transform: scale(1.2);
+@keyframes marquee-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 /* Why Choose Us */
@@ -860,3 +799,5 @@ footer {
 .whatsapp-float i {
     font-size: 24px;
 }
+
+/* Chat Widget */
